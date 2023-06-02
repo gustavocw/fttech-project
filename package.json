@@ -1,0 +1,36 @@
+{
+  "name": "m3u8",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "🎥 HLS Streaming Player",
+  "scripts": {
+    "dev": "yarn start-server && python req.py",
+    "start-server": "yarn vite",
+    "start": "yarn vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "chrome:manifest": "BROWSER=chrome node manifest.js",
+    "firefox:manifest": "BROWSER=firefox node manifest.js",
+    "build:firefox": "NODE_ENV=production BROWSER=firefox vite build && npm run firefox:manifest",
+    "build:chrome": "NODE_ENV=production BROWSER=chrome vite build && npm run chrome:manifest",
+    "zip:chrome": "NODE_ENV=production BROWSER=chrome npm run build:chrome && npm run chrome:manifest && (cd dist; zip -r ../chrome.zip .)",
+    "zip:firefox": "NODE_ENV=production BROWSER=firefox npm run build:firefox && npm run firefox:manifest && (cd dist; zip -r ../firefox.zip .)"
+  },
+  "dependencies": {
+    "@tuya/tuya-connector-nodejs": "^2.1.2",
+    "axios": "^1.4.0",
+    "hls.js": "^1.2.8",
+    "logging": "^3.3.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-sweet-state": "^2.6.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "vite": "^3.2.3"
+  }
+}
