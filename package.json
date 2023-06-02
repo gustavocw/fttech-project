@@ -5,8 +5,8 @@
   "type": "module",
   "description": "🎥 HLS Streaming Player",
   "scripts": {
-    "dev": "yarn start-server && python req.py",
-    "start-server": "yarn vite",
+    "dev": "yarn start-server",
+    "start-server": "yarn vite & python3 req.py",
     "start": "yarn vite",
     "build": "vite build",
     "preview": "vite preview",
